@@ -1,15 +1,15 @@
 import React from 'react';
+import {apiRoutes} from '../config';
 import {Image, StyleSheet, Text, TouchableOpacity, View} from 'react-native';
 
 const ApiTester = (): JSX.Element => {
   const [textFromApi, setTextFromApi] = React.useState<string>('Wating ...');
 
-  const loadFromApi = () => {
+  const loadFromApi = async () => {
     const randonNumber = Math.floor(Math.random() * 10);
-    fetch('http://10.0.2.2:3000/api')
+    await fetch(apiRoutes.apiUrl)
       .then(response => response.json())
       .then(json => {
-        console.log(json);
         setTextFromApi(json.message + ': ' + randonNumber);
       })
       .catch(error => {
