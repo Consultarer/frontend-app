@@ -101,6 +101,12 @@ android {
             proguardFiles getDefaultProguardFile("proguard-android.txt"), "proguard-rules.pro"
         }
     }
+    project.ext.envConfigFiles = [
+        dev: ".env.development",
+        prod: ".env.production"
+    ]
+
+    apply from: project(':react-native-config').projectDir.getPath() + "/dotenv.gradle"
 }
 
 dependencies {
