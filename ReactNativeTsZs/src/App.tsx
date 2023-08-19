@@ -1,14 +1,8 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- *
- * @format
- */
-
+// Core imports
 import React from 'react';
-
 import {SafeAreaView, StyleSheet} from 'react-native';
 
+// Components imports
 import ApiTester from './components/ApiTester';
 
 function App(): JSX.Element {
